@@ -382,8 +382,8 @@ li{
     background-color: #101B13;
     justify-content: center;
     align-items: center;
-
 }
+
 #contact-content{
     display: flex;
     flex:0.5;
@@ -397,6 +397,7 @@ li{
     width: 100%;
     gap: 8px;
 }
+
 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
@@ -406,8 +407,8 @@ input[type=text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-
 }
+
 #ftext-area{
     text-align: start;
     font-family: 'Lato', sans-serif;
@@ -426,6 +427,7 @@ input[type=text], select {
     display: flex;
     align-self: flex-end;
 }
+
 #about-page{
     height: 100vh;
     width: 100vw;
