@@ -62,6 +62,7 @@ input {
    border-radius: 4px;
    box-sizing: border-box;
 }
+
 .paragraph{
    font-family: 'Lato', sans-serif;
    font-weight: regular;
@@ -115,6 +116,7 @@ input {
 .pushable:active .front {
    transform: translateY(-2px);
 }
+
 #buttons-div{
    margin-top: 24px;
    display: flex;
