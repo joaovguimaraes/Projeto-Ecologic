@@ -1,0 +1,12 @@
+{
+    "description": "Ecologic",
+    "authors": [
+        {
+            "name": "João Victor Guimarães",
+            "email": "joao_v_guimaraes@estudante.sc.senai.br"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.4"
+    }
+}
