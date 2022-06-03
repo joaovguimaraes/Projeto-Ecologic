@@ -17,7 +17,7 @@
    <div id="login">
       <div id="login-content">
          <form method="POST" action="http://localhost:8080/Ecologic/register/register" > 
-            
+
             <img src="http://localhost:8080/Ecologic/assets/images/logo.svg" alt="logo" style="margin-bottom: 24px;">
 
             <p class="paragraph">Nome</p>
@@ -26,11 +26,11 @@
             <p class="paragraph">E-mail</p>
             <input type="e-mail" name="email" placeholder="E-mail">
             
-            <p class="paragraph">Senha</p>
+            <p class="paragraph">Senha (Mínimo 6 caracteres)</p>
             <input type="password" name="password" placeholder="Senha">
             
             <p class="paragraph">Confirmar Senha</p>
-            <input type="password" name="passwordConfirm" placeholder='Confirme' >
+            <input type="password" name="confirm_password" placeholder='Confirme' >
 
             <div id="buttons-div">
                <button class='button'>

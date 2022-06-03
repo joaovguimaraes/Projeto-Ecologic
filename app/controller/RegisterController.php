@@ -15,20 +15,34 @@
       public function register(){
          try {
             $user = new User;
-            $user->setName($_POST['name']);
 
             $email = $_POST['email'];
-            if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-               $user->setEmail($_POST['email']);
+            $name = $_POST['name'];
+            $pass = $_POST["password"];
+            $confirm_pass = $_POST["confirm_password"];
+
+            if(strlen($name) > 3){
+               $user->setName($name);
             }else{
-               throw new \Exception('Cadastro Inválido');
+               throw new \Exception('Nome Inválido');
+            }  
+
+            if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+               $user->setEmail($email);
+            }else{
+               throw new \Exception('E-mail Inválido');
             }
 
-            if($_POST['password'] === $_POST['passwordConfirm']){
-               $user->setPassword(md5($_POST['password']));
+            if(strlen($pass) >= 6){
+               if($pass === $confirm_pass){
+                  $user->setPassword(md5($pass));
+               }else{
+                  throw new \Exception('As senhas não coincidem');
+               }
             }else{
-               throw new \Exception('Cadastro Inválido');
+               throw new \Exception('Senha Curta');
             }
+
             $user->validateRegister();
 
             header('location: http://localhost:8080/Ecologic/dashboard');

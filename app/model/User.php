@@ -11,7 +11,7 @@
       public function validateLogin(){
          $conn = Connection::getConn();
 
-         $sql = ' SELECT * FROM usuario WHERE email = :email';
+         $sql = 'SELECT * FROM usuario WHERE email = :email';
 
          $stmt = $conn->prepare($sql);
          $stmt->bindValue(':email',$this->email);
@@ -32,20 +32,36 @@
          $conn = Connection::getConn();
 
          $sql = ' INSERT INTO usuario ( nome, email, senha) VALUES (:nome,:email,:senha)';
+         if($this->compareEmail()){
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':nome',$this->name);
+            $stmt->bindValue(':email',$this->email);
+            $stmt->bindValue(':senha',$this->password);
+            $stmt->execute();
+            
+            $this->validateLogin();
+
+            if(isset($_SESSION['usr'])){
+               return true;
+            }
+         }
+         throw new \Exception('Cadastro Inválido');
+      }
+
+      private function compareEmail(){
+         $conn = Connection::getConn();
+
+         $sql = 'SELECT * FROM usuario WHERE email = :email';
 
          $stmt = $conn->prepare($sql);
-         $stmt->bindValue(':nome',$this->name);
          $stmt->bindValue(':email',$this->email);
-         $stmt->bindValue(':senha',$this->password);
          $stmt->execute();
-         
-         $this->validateLogin();
-
-         if(isset($_SESSION['usr'])){
+         $result = $stmt->fetch();
+         if(isset($result['email']) && $result['email'] != ''){
+            return false;
+         }else{
             return true;
          }
-      
-         throw new \Exception('Cadastro Inválido');
       }
 
       public function setEmail($email){
