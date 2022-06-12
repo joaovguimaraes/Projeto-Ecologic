@@ -9,6 +9,6 @@
 
          $template = $twig->load('index.php');
          return $template->render();
-
+         
       }
    }

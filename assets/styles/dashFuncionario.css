@@ -426,7 +426,7 @@ li {
    color: #FFF;
 }
 
-#modal-filter {
+#modal-add {
    display: none;
    position: absolute;
    background-color: #0000004f;
@@ -436,7 +436,7 @@ li {
    align-items: center;
 }
 
-.modal-filter-display {
+.modal-add-display {
    height: 300px;
    width: 300px;
 
@@ -457,11 +457,11 @@ li {
 
 }
 
-.modal-filter-text p:nth-child(2) {
+.modal-add-text p:nth-child(2) {
    color: #FFF;
 }
 
-.modal-filter-display input {
+.modal-add-display input {
    border: #000 2px solid;
    font-weight: bold;
 }
@@ -477,7 +477,7 @@ li {
    color: #FFF;
 }
 
-.modal-filter-button {
+.modal-add-button {
    display: flex;
    gap: 5px;
 }

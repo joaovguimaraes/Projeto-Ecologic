@@ -1,4 +1,5 @@
 <?php
+
    class Core{
       private $url;
       private $controller;
@@ -6,7 +7,8 @@
       private $params = array();
 
       private $user;
-
+      
+      
       public function __construct(){
          $this->user = $_SESSION['usr'] ?? null;
       }
@@ -33,7 +35,7 @@
          }
 
          if($this->user){
-            $pg_permission = ['DashboardController', 'HomeController'];
+            $pg_permission = ['DashboardController', 'DashFuncionarioController', 'DashVeiculoController','HomeController'];
             
             if(!isset($this->controller) || !in_array($this->controller, $pg_permission)){
                $this->controller = 'DashboardController';
@@ -47,7 +49,6 @@
                $this->method = 'index';
             }
          }
-
          return call_user_func(array(new $this->controller, $this->method), $this->params);
       }
    }

@@ -27,7 +27,6 @@
 
             <p class="paragraph">Senha</p>
             <input type="password" name="password" placeholder="Senha">
-            <p class="paragraph"> Error</p>
             <div id="buttons-div">
                <button class='button'>
                   Entrar

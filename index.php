@@ -9,10 +9,16 @@
 
    require_once 'app/controller/LoginController.php';
    require_once 'app/controller/DashboardController.php';
+   require_once 'app/controller/DashFuncionarioController.php';
+   require_once 'app/controller/DashVeiculoController.php';
    require_once 'app/controller/HomeController.php';
    require_once 'app/controller/RegisterController.php';
    
    require_once 'app/model/User.php';
+   require_once 'app/model/Funcionario.php';
+   require_once 'app/model/Veiculo.php';
+   require_once 'app/model/Chamado.php';
+   
 
    require_once 'lib/Ecologic/Connection.php';
 

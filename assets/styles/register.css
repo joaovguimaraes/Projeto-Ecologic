@@ -135,18 +135,25 @@ input {
    height: 50px;
    width: 200px;
 
-   border: #FFF 0px solid;
-   background-color: #000;
+   border: #000 solid 0px;
+   background-color: #23AE4A;
 
    color: #FFF;
 
    font-family: 'Lato', sans-serif;
    font-size: 1rem;
+   transition: 150ms ease-in-out;
+}
+
+.button:hover{
+   background-color: #1d943f;
 }
 
 .button:active {
-   background-color: #00000099;
+   background-color: #0d3d1a;
 }
+
+
 
 .links {
    font-family: 'Lato', sans-serif;

@@ -20,7 +20,11 @@
          if($stmt->rowCount()){
             $result = $stmt->fetch();
             if($result['senha'] === $this->password){
-               $_SESSION['usr'] = $result['id'];
+               $_SESSION['usr'] = array(
+                  'id_user' => $result['id'], 
+                  'name_user' => $result['nome']
+               );
+                
                return true;
             }
          }
