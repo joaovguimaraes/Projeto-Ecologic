@@ -5,8 +5,8 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/assets/styles/dashboard.css">
-   <link rel="shortcut icon" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/assets/images/Simbol - Ecologic.svg" type="image/svg">
+   <link rel="stylesheet" href="/styles/dashboard.css">
+   <link rel="shortcut icon" href="/images/Simbol - Ecologic.svg" type="image/svg">
    <script src="https://kit.fontawesome.com/e54de00844.js" crossorigin="anonymous"></script>
    <title>EcoLogic</title>
 </head>
@@ -68,7 +68,7 @@
    <nav id="header">
       <div id="header-links">
          <a href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/home">
-            <img id="logo" height="57" src="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/assets/images/logo.svg" alt="Ecologic">
+            <img id="logo" height="57" src="/images/logo.svg" alt="Ecologic">
          </a>
       </div>
       <div class='div-username'>
