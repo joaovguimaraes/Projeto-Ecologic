@@ -90,10 +90,10 @@
 
          $chamado->changeStatus($id[0], 'chamado');
    
-         header('location: localhost/Ecologic/dashboard/open/'.$id[0]);
+         header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashboard/open/'.$id[0]);
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: localhost/Ecologic/dashboard/open/'.$id[0]);
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashboard/open/'.$id[0]);
          }
       }
 
@@ -104,10 +104,10 @@
             foreach($_POST as &$id){
                $chamado->deleteChamado($_POST[$id]);
             }
-            header('location: localhost/Ecologic/dashboard');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashboard');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: localhost/Ecologic/dashboard');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashboard');
          }
       }
 
@@ -147,10 +147,10 @@
 
             $chamado->insertChamado();
 
-            header('location: localhost/Ecologic/dashboard');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashboard');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: localhost/Ecologic/dashboard');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashboard');
          }
       }
 
@@ -201,10 +201,10 @@
             
             $chamado->updateChamado($id[0]);
 
-            header('location: localhost/Ecologic/dashboard');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashboard');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: localhost/Ecologic/dashboard/edit/'.$id[0]);
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashboard/edit/'.$id[0]);
          }
       }
 
@@ -212,6 +212,6 @@
          unset($_SESSION['usr']);
          session_destroy();
 
-         header('Location: localhost/Ecologic/login/index');
+         header('Location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/login/index');
       }
    }
