@@ -5,9 +5,9 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="/assets/styles/login.css">
+   <link rel="stylesheet" href="/assetsassets/styles/login.css">
    <title>EcoLogic</title>
-   <link rel="shortcut icon" href="/images/Simbol - Ecologic.svg" type="image/svg">
+   <link rel="shortcut icon" href="assets/images/Simbol - Ecologic.svg" type="image/svg">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
       <div id="login-content">
       
          <form method="POST" action="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/login/check" > 
-            <img src="/images/logo.svg" alt="logo" style="margin-bottom: 24px;">
+            <img src="assets/images/logo.svg" alt="logo" style="margin-bottom: 24px;">
             
             <p class="paragraph">Usuário</p>
             <input type="e-mail" name="email" placeholder="E-mail">
