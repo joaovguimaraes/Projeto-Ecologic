@@ -43,9 +43,7 @@
          }
          
          if($this->user){
-            $pg_permission = ($this->user['admin'] == 1)
-               ? ['DashboardController', 'DashFuncionarioController', 'DashVeiculoController','HomeController', 'DashAdminController']
-               : ['DashboardController', 'DashFuncionarioController', 'DashVeiculoController','HomeController'];
+            $pg_permission =  ['DashboardController', 'DashFuncionarioController', 'DashVeiculoController','HomeController', 'DashAdminController']
             if(!isset($this->controller) || !in_array($this->controller, $pg_permission)){
                $this->controller = 'DashboardController';
                $this->method = 'index';

@@ -70,14 +70,14 @@
             <i class="fa-solid fa-angle-right"></i>
          </button>
 
-         {% if usr.admin == 1 %}
+         
             <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/dashAdmin'">
                <div class="animation-bar-item">
                   <h3>Admin</h3>
                </div>
                <i class="fa-solid fa-angle-right"></i>
             </button>    
-         {% endif %}
+
       </div>
 
       <div id="calculator-display">
