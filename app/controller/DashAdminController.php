@@ -28,10 +28,10 @@
             foreach($_POST as &$id){
                $user->deleteUser($_POST[$id]);
             }
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/dashAdmin');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/dashAdmin');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/dashAdmin');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/dashAdmin');
          }
       }
 
@@ -103,10 +103,10 @@
 
             $user->updateUser($id[0]);
 
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/dashAdmin');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/dashAdmin');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/dashAdmin/edit/'.$id[0]);
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/dashAdmin/edit/'.$id[0]);
          }
       }    
 
@@ -114,7 +114,7 @@
          unset($_SESSION['usr']);
          session_destroy();
 
-         header('Location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/login/index');
+         header('Location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/login/index');
       }
 
       public function fetchData(){

@@ -5,9 +5,9 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/assets/styles/register.css">
+   <link rel="stylesheet" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/assets/styles/register.css">
    <title>EcoLogic</title>
-   <link rel="shortcut icon" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/assets/images/Simbol - Ecologic.svg" type="image/svg">
+   <link rel="shortcut icon" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/assets/images/Simbol - Ecologic.svg" type="image/svg">
 </head>
 
 <body>
@@ -19,9 +19,9 @@
    <div class="bg bg3"></div>
    <div id="login">
       <div id="login-content">
-         <form method="POST" action="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/register/register" > 
+         <form method="POST" action="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/register/register" > 
 
-            <img src="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/assets/images/logo.svg" alt="logo" style="margin-bottom: 24px;">
+            <img src="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/assets/images/logo.svg" alt="logo" style="margin-bottom: 24px;">
 
             <p class="paragraph">Nome</p>
             <input type="name" name="name" placeholder="Nome">
@@ -39,7 +39,7 @@
                <button class='button'>
                   Cadastrar
                </button>
-               <a class="links" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/login/index">Voltar</a>
+               <a class="links" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/login/index">Voltar</a>
             </div>
          </form>
 
