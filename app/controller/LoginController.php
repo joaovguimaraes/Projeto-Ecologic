@@ -20,9 +20,9 @@
             $user->setPassword(md5($_POST['password']));
             $user->validateLogin();
             
-            header('location: http://localhost/Projeto-Ecologic/dashboard');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/dashboard');
          }catch(\Exception $e){
-            header('location: http://localhost/Projeto-Ecologic/login');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/login');
          }
       }
    }
