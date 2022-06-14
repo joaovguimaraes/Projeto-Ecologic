@@ -22,7 +22,7 @@
                <h2>Adicionar</h2>
             </div>
 
-            <form class="modal-add-input" method="POST" action="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/dashboard/insert">
+            <form class="modal-add-input" method="POST" action="http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard/insert">
                <p class="paragraph">Local</p>
                <input type="text" name="local" placeholder="Local">
 
@@ -67,32 +67,32 @@
 
    <nav id="header">
       <div id="header-links">
-         <a href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/home">
+         <a href="http://ec2-52-90-93-141.compute-1.amazonaws.com/home">
             <img id="logo" height="57" src="assets/images/logo.svg" alt="Ecologic">
          </a>
       </div>
       <div class='div-username'>
-         <p class='username'>{{usr.name_user}}, <a class="links" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/dashboard/logout">Sair</a> </p>
+         <p class='username'>{{usr.name_user}}, <a class="links" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard/logout">Sair</a> </p>
       </div>
    </nav>
 
    <section id="calculator">
 
       <div id="calculator-options">
-         <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/dashboard'">
+         <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard'">
             <div class="animation-bar-item">
                <h3>Chamada</h3>
             </div>
             <i class="fa-solid fa-angle-right"></i>
          </button>
-         <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/dashVeiculo'">
+         <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/dashVeiculo'">
             <div class="animation-bar-item">
                <h3>Carros</h3>
             </div>
             <i class="fa-solid fa-angle-right"></i>
          </button>
 
-         <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/dashFuncionario'">
+         <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/dashFuncionario'">
             <div class="animation-bar-item">
                <h3>Funcionário</h3>
             </div>
@@ -100,7 +100,7 @@
          </button>
 
          {% if usr.admin == 1 %}
-            <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/dashAdmin'">
+            <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/dashAdmin'">
                <div class="animation-bar-item">
                   <h3>Admin</h3>
                </div>
@@ -143,7 +143,7 @@
                               {% endif %}
                               
                            </p>
-                           <a href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/dashboard/open/{{chamado.id}}">Mais Informações</a>
+                           <a href="http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard/open/{{chamado.id}}">Mais Informações</a>
                         </div>
                      </div>
                      <div>
@@ -167,11 +167,11 @@
       form = document.getElementById("form-display");
 
       function handleDelete() {
-         form.action="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/dashboard/delete";
+         form.action="http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard/delete";
          form.submit();
       }
       function handleFinish() {
-         form.action="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/dashboard/finish";
+         form.action="http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard/finish";
          form.submit();
       }
       

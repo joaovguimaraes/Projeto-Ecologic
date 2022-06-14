@@ -35,7 +35,7 @@
         </div>
 
         <div id="div-button-header">
-            <button class="pushable" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/login'" type="button">
+            <button class="pushable" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/login'" type="button">
                 <span class="front">
                     Calcular
                 </span>
@@ -56,7 +56,7 @@
                     <br />e salvar o planeta. Conheça Eco2logic, <br />ainda melhor que o primeiro.
                 </p>
                 <div id="div-button-menu">
-                    <button class="pushable" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/login'">
+                    <button class="pushable" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/login'">
                         <span class="front">
                             Calcular
                         </span>

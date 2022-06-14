@@ -17,12 +17,12 @@
    <div class="bg"></div>
    <div class="bg bg2"></div>
    <div class="bg bg3"></div>
-   <div style='width: 75px; margin: 10px'><a class="links" style='margin-top: 10px' href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/home">Voltar</a></div>
+   <div style='width: 75px; margin: 10px'><a class="links" style='margin-top: 10px' href="http://ec2-52-90-93-141.compute-1.amazonaws.com/home">Voltar</a></div>
    
    <div id="login">
       <div id="login-content">
       
-         <form method="POST" action="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/login/check" > 
+         <form method="POST" action="http://ec2-52-90-93-141.compute-1.amazonaws.com/login/check" > 
             <img src="assets/images/logo.svg" alt="logo" style="margin-bottom: 24px;">
             
             <p class="paragraph">Usuário</p>
@@ -34,7 +34,7 @@
                <button class='button'>
                   Entrar
                </button>
-               <a class="links" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/register/index">Cadastro</a>
+               <a class="links" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/register/index">Cadastro</a>
             </div>
          </form>
 
