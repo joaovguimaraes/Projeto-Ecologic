@@ -12,7 +12,9 @@
 </head>
 
 <body>
-   
+   {% if error != ''%}
+      <div class='error'>{{error.msg}}!</div>
+   {% endif %}
    <div id="modal-add">
       <div class="modal-add-display">
          <div>
@@ -32,7 +34,7 @@
 
                <div class="modal-add-button" style='margin-top: 20px'>
                   <button id="button-confirm-modal" class="button-display">Confirmar</button>
-                  <button id="button-remove-modal" class="button-display add">Cancelar</button>
+                  <button id="button-remove-modal" type='button' onclick='modalAddClose()' class="button-display add">Cancelar</button>
                </div>
             </form>
          </div>
@@ -47,9 +49,8 @@
             <p>Uma vez que excluir não terá mais como recuperar o dado!</p>
          </div>
          <div class="modal-remove-button">
-            <button id="button-remove-modal" class="button-display">Cancelar</button>
+            <button id="button-remove-modal" class="button-display" type='button' onclick='modalRemoveClose()'>Cancelar</button>
             <input id="button-confirm-modal" class="button-display add" type="submit" form="form-display" value="Confirmar"/>
-
          </div>
       </div>
    </div>
@@ -61,7 +62,7 @@
          </a>
       </div>
       <div class='div-username'>
-         <p class='username'>{{name_user}}, <a class="links" href="http://localhost:8080/Ecologic/dashboard/logout">Sair</a> </p>
+         <p class='username'>{{usr.name_user}}, <a class="links" href="http://localhost:8080/Ecologic/dashboard/logout">Sair</a> </p>
       </div>
    </nav>
 
@@ -80,12 +81,22 @@
             </div>
             <i class="fa-solid fa-angle-right"></i>
          </button>
+
          <button class="calculator-bar-item" onclick="location.href='http://localhost:8080/Ecologic/dashFuncionario'">
             <div class="animation-bar-item">
                <h3>Funcionário</h3>
             </div>
             <i class="fa-solid fa-angle-right"></i>
          </button>
+
+         {% if usr.admin == 1 %}
+            <button class="calculator-bar-item" onclick="location.href='http://localhost:8080/Ecologic/dashAdmin'">
+               <div class="animation-bar-item">
+                  <h3>Admin</h3>
+               </div>
+               <i class="fa-solid fa-angle-right"></i>
+            </button>    
+         {% endif %}
       </div>
 
       <div id="calculator-display">
@@ -108,19 +119,22 @@
                      <div>
                         <h3>#{{funcionario.id}}</h3>
                         <h2>{{funcionario.nome}}</h2>
-                        <p {% if funcionario.disponivel == 0 %}
-                              style='background-color: red'
-                           {% endif %}
-                        >
-                           {% if funcionario.disponivel == 0 %}
-                              Indisponível
-                           {% else %}
-                              Disponível
-                           {% endif %}
-                        </p>
+                        <div style='display: flex; gap: 15px'> 
+                           <p {% if funcionario.disponivel == 0 %}
+                                 style='background-color: red'
+                              {% endif %}
+                           >
+                              {% if funcionario.disponivel == 0 %}
+                                 Indisponível
+                              {% else %}
+                                 Disponível
+                              {% endif %}
+                           </p>
+                           <a href="http://localhost:8080/Ecologic/dashFuncionario/edit/{{funcionario.id}}">Editar</a>
+                        </div>
                      </div>
                      <div>
-                        <p>Celular: {{funcionario.contato}}</p>
+                        <p>Celular: ({{funcionario.contato|slice(0,2)}}) {{funcionario.contato|slice(2,5)}}-{{funcionario.contato|slice(7,9)}}</p>
                         <h3>CNH: {{funcionario.cnh}}</h3>
                      </div>
                   </div>
@@ -141,6 +155,14 @@
 
       function modalRemoveOpen() {
          modalRemove.style.display = "flex";
+      }
+
+      function modalAddClose() {
+         modalAdd.style.display = "none";
+      }
+      
+      function modalRemoveClose() {
+         modalRemove.style.display = "none";
       }
 
       window.onclick = function (event) {

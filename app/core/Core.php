@@ -8,9 +8,17 @@
 
       private $user;
       
-      
       public function __construct(){
          $this->user = $_SESSION['usr'] ?? null;
+         $this->error = $_SESSION['msg_error'] ?? null;
+         
+         if(isset($this->error)){
+            if($this->error['count'] === 0){
+               $_SESSION['msg_error']['count']++;
+            }else{
+               unset($_SESSION['msg_error']);
+            }
+         }
       }
 
       public function start($request){
@@ -33,10 +41,11 @@
             $this->controller = 'HomeController';
             $this->method = 'index';
          }
-
+         
          if($this->user){
-            $pg_permission = ['DashboardController', 'DashFuncionarioController', 'DashVeiculoController','HomeController'];
-            
+            $pg_permission = ($this->user['admin'] == 1)
+               ? ['DashboardController', 'DashFuncionarioController', 'DashVeiculoController','HomeController', 'DashAdminController']
+               : ['DashboardController', 'DashFuncionarioController', 'DashVeiculoController','HomeController'];
             if(!isset($this->controller) || !in_array($this->controller, $pg_permission)){
                $this->controller = 'DashboardController';
                $this->method = 'index';

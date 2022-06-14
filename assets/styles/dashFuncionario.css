@@ -13,6 +13,7 @@
 html,
 body {
    height: 100%;
+   font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -21,6 +22,17 @@ body {
    -webkit-font-smoothing: antialiased;
 
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 
 img,
 picture,
@@ -437,7 +449,6 @@ li {
 }
 
 .modal-add-display {
-   height: 300px;
    width: 300px;
 
    display: flex;
@@ -464,6 +475,7 @@ li {
 .modal-add-display input {
    border: #000 2px solid;
    font-weight: bold;
+   width: 100%;
 }
 
 .div-username{
@@ -480,4 +492,47 @@ li {
 .modal-add-button {
    display: flex;
    gap: 5px;
+}
+
+.error {
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 5px;
+   bottom: 15px;
+   right: 15px;
+   width: 200px;
+   height: 50px;
+   font-weight: bold;
+   overflow: hidden;
+   background-color: rgb(219, 0, 0);
+   border: #000 solid 2px;
+   color: #FEFEFE;
+   
+   -moz-animation: cssAnimation 0s ease-in 5s forwards;
+   /* Firefox */
+   -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+   /* Safari and Chrome */
+   animation: cssAnimation 0s ease-in 5s forwards;
+   -webkit-animation-fill-mode: forwards;
+   animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+   to {
+       width:0;
+       height:0;
+       overflow:hidden;
+       border: 0px;
+       padding: 0px;
+   }
+}
+@-webkit-keyframes cssAnimation {
+   to {
+       width:0;
+       height:0;
+       visibility:hidden;
+       border: 0px;
+       padding: 0px;
+   }
 }

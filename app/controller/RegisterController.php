@@ -6,9 +6,9 @@
 
          $loader = new \Twig\Loader\FilesystemLoader('app/view/register');
          $twig = new \Twig\Environment($loader,['auto_reload']);
-
+         $parameters['error'] = $_SESSION['msg_error'] ?? null;
          $template = $twig->load('index.php');
-         return $template->render();
+         return $template->render($parameters);
 
       }
 
@@ -47,6 +47,7 @@
 
             header('location: http://localhost:8080/Ecologic/dashboard');
          }catch(\Exception $e){
+            $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
             header('location: http://localhost:8080/Ecologic/Register');
          }
       }

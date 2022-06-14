@@ -9,10 +9,12 @@
       private $cnh;
       private $disponivel;
 
-      public function fetchAllFuncionario(){
+      public function fetchAllFuncionario($disponivel = true){
          $conn = Connection::getConn();
 
-         $sql = 'SELECT * FROM funcionario ORDER BY id DESC';
+         $sql = ($disponivel) 
+            ? 'SELECT * FROM funcionario ORDER BY id DESC'
+            : 'SELECT * FROM funcionario WHERE disponivel = 1 ORDER BY id DESC';
 
          $stmt = $conn->prepare($sql);
          $stmt->execute();
@@ -36,9 +38,41 @@
          $stmt->bindValue(':cnh',$this->cnh);
 
          $stmt->execute();
-         
+
          return true;
       }  
+
+      public function fetchFuncionario($id){
+         $conn = Connection::getConn();
+
+         $sql = 'SELECT * FROM funcionario WHERE id = :id;';
+         $stmt = $conn->prepare($sql);
+         
+         $stmt->bindValue(':id', $id);
+        
+         $stmt->execute();
+
+         $result = $stmt->fetchObject("Funcionario");
+
+         return $result;
+      }      
+      
+      public function updateFuncionario($id){
+
+         $conn = Connection::getConn();
+
+         $sql = 'UPDATE `funcionario` SET nome=:nome,contato=:contato,cnh=:cnh WHERE id =' . $id;
+
+         $stmt = $conn->prepare($sql);
+         
+         $stmt->bindValue(':nome', $this->name);
+         $stmt->bindValue(':contato', $this->contact);
+         $stmt->bindValue(':cnh', $this->cnh);
+               
+         $stmt->execute();
+
+         return true;
+      }
 
       public function deleteFuncionario($id){
          $conn = Connection::getConn();

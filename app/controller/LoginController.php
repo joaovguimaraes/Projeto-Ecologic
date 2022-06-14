@@ -6,9 +6,10 @@
 
          $loader = new \Twig\Loader\FilesystemLoader('app/view/login');
          $twig = new \Twig\Environment($loader,['auto_reload']);
+         $parameters['error'] = $_SESSION['msg_error'] ?? null;
 
          $template = $twig->load('index.php');
-         return $template->render();
+         return $template->render($parameters);
 
       }
 

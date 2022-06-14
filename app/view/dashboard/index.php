@@ -12,7 +12,46 @@
 </head>
 
 <body>
-   
+   {% if error != ''%}
+      <div class='error'>{{error.msg}}!</div>
+   {% endif %}
+   <div id="modal-add">
+      <div class="modal-add-display">
+         <div>
+            <div class="modal-add-text">
+               <h2>Adicionar</h2>
+            </div>
+
+            <form class="modal-add-input" method="POST" action="http://localhost:8080/Ecologic/dashboard/insert">
+               <p class="paragraph">Local</p>
+               <input type="text" name="local" placeholder="Local">
+
+               <p class="paragraph">Kilometragem do carro</p>
+               <input type="number" name="km_out" placeholder="Apenas números">
+               
+               <p class="paragraph">Funcionario</p>
+               <select id="funcionarios" name="funcionarios">
+                  {% for funcionario in funcionarios %}
+                     <option value="{{funcionario.id}}">{{funcionario.nome}}</option>
+                  {%endfor%}
+               </select>
+
+               <p class="paragraph">Veiculo</p>
+               <select id="veiculos" name="veiculos">
+                  {% for veiculo in veiculos %}
+                     <option value="{{veiculo.id}}">{{veiculo.modelo}}</option>
+                  {%endfor%}
+               </select>
+
+               <div class="modal-add-button" style='margin-top: 20px'>
+                  <button id="button-confirm-modal" class="button-display">Confirmar</button>
+                  <button id="button-remove-modal" class="button-display add" type='button' onclick='modalAddClose()'>Cancelar</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+
    <div id="modal-remove">
       <div class="modal-remove-display">
          <div class="modal-remove-text">
@@ -20,8 +59,8 @@
             <p>Uma vez que excluir não terá mais como recuperar o dado!</p>
          </div>
          <div class="modal-remove-button">
-            <button id="button-remove-modal" class="button-display">Cancelar</button>
-            <button id="button-confirm-modal" class="button-display add">Confirmar</button>
+            <button id="button-remove-modal" class="button-display" type='button' onclick='modalRemoveClose()' >Cancelar</button>
+            <input id="button-confirm-modal" onclick='handleDelete()' class="button-display add" type="submit" value="Confirmar"/>
          </div>
       </div>
    </div>
@@ -33,7 +72,7 @@
          </a>
       </div>
       <div class='div-username'>
-         <p class='username'>{{name_user}}, <a class="links" href="http://localhost:8080/Ecologic/dashboard/logout">Sair</a> </p>
+         <p class='username'>{{usr.name_user}}, <a class="links" href="http://localhost:8080/Ecologic/dashboard/logout">Sair</a> </p>
       </div>
    </nav>
 
@@ -52,20 +91,29 @@
             </div>
             <i class="fa-solid fa-angle-right"></i>
          </button>
+
          <button class="calculator-bar-item" onclick="location.href='http://localhost:8080/Ecologic/dashFuncionario'">
             <div class="animation-bar-item">
                <h3>Funcionário</h3>
             </div>
             <i class="fa-solid fa-angle-right"></i>
          </button>
+
+         {% if usr.admin == 1 %}
+            <button class="calculator-bar-item" onclick="location.href='http://localhost:8080/Ecologic/dashAdmin'">
+               <div class="animation-bar-item">
+                  <h3>Admin</h3>
+               </div>
+               <i class="fa-solid fa-angle-right"></i>
+            </button>    
+         {% endif %}
       </div>
       
       <div id="calculator-display">
-
          <div id="display-buttons">
             <div class="buttons-display-div">
                <button class="button-display"><strong>Calcular</strong></button>
-               <button class="button-display add"><strong>Adicionar +</strong></button>
+               <button class="button-display add" onclick="modalAddOpen()"><strong>Adicionar +</strong></button>
             </div>
             <div class="buttons-display-div">
                <button id="button-remove" onclick="modalRemoveOpen()" class="button-icon-display remove">
@@ -74,54 +122,83 @@
             </div>
          </div>
 
-         <div class="display-item-list">
+         <form id="form-display" method="POST" class="display-item-list">
             {% for chamado in chamados %}
                <input type="checkbox" name="{{chamado.id}}" value="{{chamado.id}}" id="{{chamado.id}}" style="display: none;" />
                <label for="{{chamado.id}}" class="label-display">
                   <div class="display-bar-item">
                      <div>
-                        <h3>#{{chamado.id}}</h3>
+                        
+                        <h3>#{{chamado.id}} </h3>
                         <h2>{{chamado.local}}</h2>
-                        <p {% if chamado.concluido == 0 %}
-                              style='background-color: red'
-                           {% endif %}
-                        >
-                           {% if chamado.concluido == 0 %}
-                              Inconcluído
-                           {% else %}
-                              Concluído
-                           {% endif %}
-                        </p>
+                        <div style='display: flex; gap:5px;'>
+                           <p {% if chamado.concluido == 0 %}
+                                 style='background-color: red'
+                              {% endif %}
+                           >
+                              {% if chamado.concluido == 0 %}
+                                 Inconcluído
+                              {% else %}
+                                 Concluído 
+                              {% endif %}
+                              
+                           </p>
+                           <a href="http://localhost:8080/Ecologic/dashboard/open/{{chamado.id}}">Mais Informações</a>
+                        </div>
                      </div>
-
                      <div>
-                        <p>Celular: {{chamado.data}}</p>
-                        <h3>CNH: {{chamado.id_func}}</h3>
-                        <h3>CNH: {{chamado.id_veiculo}}</h3>
+                        
+                        <p>{{chamado.data}} </p>
+                        <h2>{{chamado.nome}}</h2>
+                        <h3>{{chamado.modelo }}</h3>
                      </div>
+                     
                   </div>
+                  
                </label>
+               
             {%endfor%}
-         </div>
+         </form>
+         
       </div>
    </section>
 
    <script>
+      form = document.getElementById("form-display");
+
+      function handleDelete() {
+         form.action="http://localhost:8080/Ecologic/dashboard/delete";
+         form.submit();
+      }
+      function handleFinish() {
+         form.action="http://localhost:8080/Ecologic/dashboard/finish";
+         form.submit();
+      }
+      
+
       var modalRemove = document.getElementById("modal-remove");
 
-      var modalFilter = document.getElementById("modal-filter");
+      var modalAdd = document.getElementById("modal-add");
 
-      function modalFilterOpen() {
-         modalFilter.style.display = "flex";
+      function modalAddOpen() {
+         modalAdd.style.display = "flex";
       }
 
       function modalRemoveOpen() {
          modalRemove.style.display = "flex";
       }
 
+      function modalAddClose() {
+         modalAdd.style.display = "none";
+      }
+      
+      function modalRemoveClose() {
+         modalRemove.style.display = "none";
+      }
+
       window.onclick = function (event) {
-         if (event.target == modalFilter) {
-            modalFilter.style.display = "none";
+         if (event.target == modalAdd) {
+            modalAdd.style.display = "none";
          }
          if (event.target == modalRemove) {
             modalRemove.style.display = "none";

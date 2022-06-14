@@ -10,10 +10,12 @@
       private $disponivel;
       private $plate;
 
-      public function fetchAllVeiculo(){
+      public function fetchAllVeiculo($disponivel = true){
          $conn = Connection::getConn();
 
-         $sql = 'SELECT * FROM veiculo ORDER BY id DESC';
+         $sql = ($disponivel)
+            ?'SELECT * FROM veiculo ORDER BY id DESC'
+            :'SELECT * FROM veiculo WHERE disponivel = 1 ORDER BY id DESC';
 
          $stmt = $conn->prepare($sql);
          $stmt->execute();
@@ -25,6 +27,37 @@
          }
          return $result;
       }   
+
+      public function fetchVeiculo($id){
+         $conn = Connection::getConn();
+
+         $sql = 'SELECT * FROM veiculo WHERE id = :id;';
+         $stmt = $conn->prepare($sql);
+         
+         $stmt->bindValue(':id', $id);
+        
+         $stmt->execute();
+
+         $result = $stmt->fetchObject("Veiculo");
+
+         return $result;
+      }
+
+      public function updateVeiculo($id){
+         $conn = Connection::getConn();
+
+         $sql = 'UPDATE `veiculo` SET modelo = :modelo ,ano = :ano, autonomia = :autonomia, placa = :placa WHERE id='.$id;
+         $stmt = $conn->prepare($sql);
+         
+         $stmt->bindValue(':modelo', $this->model);
+         $stmt->bindValue(':ano', $this->year);
+         $stmt->bindValue(':autonomia', $this->autonomy);
+         $stmt->bindValue(':placa', $this->plate);
+
+         $stmt->execute();
+
+         return true;
+      }  
 
       public function insertVeiculo(){
          $conn = Connection::getConn();

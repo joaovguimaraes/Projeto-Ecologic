@@ -11,6 +11,9 @@
 </head>
 
 <body>
+   {% if error != ''%}
+      <div class='error'>{{error.msg}}!</div>
+   {% endif %}
    <div class="bg"></div>
    <div class="bg bg2"></div>
    <div class="bg bg3"></div>

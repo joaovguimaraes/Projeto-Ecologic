@@ -12,6 +12,7 @@
    require_once 'app/controller/DashFuncionarioController.php';
    require_once 'app/controller/DashVeiculoController.php';
    require_once 'app/controller/HomeController.php';
+   require_once 'app/controller/DashAdminController.php';
    require_once 'app/controller/RegisterController.php';
    
    require_once 'app/model/User.php';
