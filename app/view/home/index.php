@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/assets/styles/home.css">
+    <link rel="stylesheet" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/assets/styles/home.css">
     <script src="https://kit.fontawesome.com/e54de00844.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/assets/images/Simbol - Ecologic.svg" type="image/svg">
+    <link rel="shortcut icon" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/assets/images/Simbol - Ecologic.svg" type="image/svg">
     <title>EcoLogic</title>
 </head>
 
 <body>
     <nav id="header">
         <div id="header-links">
-            <img id="logo" height="57" src="http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/assets/images/logo.svg" alt="Ecologic">
+            <img id="logo" height="57" src="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/assets/images/logo.svg" alt="Ecologic">
             <ul>
                 <li class="selected">
                     <a class='links ' href="#home" onclick="">Home</a>
@@ -35,7 +35,7 @@
         </div>
 
         <div id="div-button-header">
-            <button class="pushable" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/login'" type="button">
+            <button class="pushable" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/login'" type="button">
                 <span class="front">
                     Calcular
                 </span>
@@ -56,16 +56,16 @@
                     <br />e salvar o planeta. Conheça Eco2logic, <br />ainda melhor que o primeiro.
                 </p>
                 <div id="div-button-menu">
-                    <button class="pushable" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/login'">
+                    <button class="pushable" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/login'">
                         <span class="front">
                             Calcular
                         </span>
                     </button>
                 </div>
             </div>
-            <img id="simbol large" height="412" src="http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/assets/images/Simbol - EcologicLarge.svg" alt="Ecologic" />
+            <img id="simbol large" height="412" src="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/assets/images/Simbol - EcologicLarge.svg" alt="Ecologic" />
             <a href="#team-page" id="div-arrow-down">
-                <img id="arrow-down" src="http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/assets/images/Vector.svg" alt="arrow down">
+                <img id="arrow-down" src="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/assets/images/Vector.svg" alt="arrow down">
             </a>
         </section>
         <section id="team-page">
@@ -73,7 +73,7 @@
                 <h1 class="title section team">Equipe</h1>
                 <div style="display: flex; flex-direction: row; gap: 10vw">
                     <div class="team-card"
-                        style=" background-image:linear-gradient(#00000000,#00000000, #000), url(http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/assets/images/Rectangle\ 7.svg);">
+                        style=" background-image:linear-gradient(#00000000,#00000000, #000), url(http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/assets/images/Rectangle\ 7.svg);">
                         <div class="team-card-content">
                             <h1 class="subtitle">João<br>Guimarães</h1>
                             <p class="paragraph">
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <div class="team-card"
-                        style="background-image:linear-gradient(#00000000,#00000000, #000), url(http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/assets/images/image\ 1.svg)">
+                        style="background-image:linear-gradient(#00000000,#00000000, #000), url(http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/assets/images/image\ 1.svg)">
                         <div class="team-card-content">
                             <h1 class="subtitle">Margiory<br>Simas</h1>
                             <p class="paragraph">
@@ -93,7 +93,7 @@
                         </div>
                     </div>
                     <div class="team-card"
-                        style="background-image: linear-gradient(#00000000,#00000000, #000), url(http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/assets/images/image\ 2.svg);">
+                        style="background-image: linear-gradient(#00000000,#00000000, #000), url(http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/assets/images/image\ 2.svg);">
                         <div class="team-card-content">
                             <h1 class="subtitle">Mª Eduarda<br>Aguiar</h1>
                             <p class="paragraph">
@@ -206,7 +206,7 @@
                     </label>
 
                 </div>
-                <image id="image-fabric" src="http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/assets/images/fabric.svg" />
+                <image id="image-fabric" src="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/assets/images/fabric.svg" />
             </div>
         </section>
         <section id="about-page">
@@ -241,7 +241,7 @@
 
                     </p>
                 </div>
-                <image id="image-fabric" src="http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/assets/images/transit.jpeg" />
+                <image id="image-fabric" src="http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/assets/images/transit.jpeg" />
             </div>
         </section>
         <section id="contact">

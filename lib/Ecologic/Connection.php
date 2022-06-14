@@ -21,6 +21,6 @@
       }
       
       public static function getURL(){
-         return 'http://ec2-52-90-93-141.compute-1.amazonaws.com/';
+         return 'http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/login/';
       }
    }

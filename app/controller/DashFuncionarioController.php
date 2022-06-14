@@ -28,10 +28,10 @@
             foreach($_POST as &$id){
                $func->deleteFuncionario($_POST[$id]);
             }
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashFuncionario');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/dashFuncionario');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashFuncionario');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/dashFuncionario');
          }
       }
 
@@ -87,10 +87,10 @@
       
             $func->updateFuncionario($id[0]);
 
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashFuncionario');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/dashFuncionario');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashFuncionario/edit/'.$id[0]);
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/dashFuncionario/edit/'.$id[0]);
          }
       }
 
@@ -122,10 +122,10 @@
 
             $func->insertFuncionario();
 
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashFuncionario');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/dashFuncionario');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashFuncionario');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/dashFuncionario');
          }
       }
 
@@ -133,7 +133,7 @@
          unset($_SESSION['usr']);
          session_destroy();
 
-         header('Location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/login/index');
+         header('Location: http://ec2-52-90-93-141.compute-1.amazonaws.com/Projeto-Ecologic/Ecologic/login/index');
       }
 
       public function fetchData(){
