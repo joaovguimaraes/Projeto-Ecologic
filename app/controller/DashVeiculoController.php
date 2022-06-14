@@ -28,10 +28,10 @@
             foreach($_POST as &$id){
                $veiculo->deleteVeiculo($_POST[$id]);
             }
-            header('location: ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashVeiculo');
+            header('location: localhost/Ecologic/dashVeiculo');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashVeiculo');
+            header('location: localhost/Ecologic/dashVeiculo');
          }
       }
 
@@ -72,10 +72,10 @@
 
             $veiculo->insertVeiculo();
 
-            header('location: ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashVeiculo');
+            header('location: localhost/Ecologic/dashVeiculo');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashVeiculo');
+            header('location: localhost/Ecologic/dashVeiculo');
          }
       }
 
@@ -138,10 +138,10 @@
 
             $veiculo->updateVeiculo($id[0]);
 
-            header('location: ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashVeiculo');
+            header('location: localhost/Ecologic/dashVeiculo');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashVeiculo/edit/'.$id[0]);
+            header('location: localhost/Ecologic/dashVeiculo/edit/'.$id[0]);
          }
       }
 
@@ -149,7 +149,7 @@
          unset($_SESSION['usr']);
          session_destroy();
 
-         header('Location: ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/login/index');
+         header('Location: localhost/Ecologic/login/index');
       }
 
       public function fetchData(){

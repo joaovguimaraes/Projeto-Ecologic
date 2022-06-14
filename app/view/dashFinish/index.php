@@ -5,8 +5,8 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/assets/styles/dashFinish.css">
-   <link rel="shortcut icon" href="ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/assets/images/Simbol - Ecologic.svg" type="image/svg">
+   <link rel="stylesheet" href="localhost/Ecologic/assets/styles/dashFinish.css">
+   <link rel="shortcut icon" href="localhost/Ecologic/assets/images/Simbol - Ecologic.svg" type="image/svg">
    <script src="https://kit.fontawesome.com/e54de00844.js" crossorigin="anonymous"></script>
    <title>EcoLogic</title>
 </head>
@@ -22,7 +22,7 @@
                <h2>Adicionar</h2>
             </div>
 
-            <form class="modal-add-input" method="POST" action="ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashboard/finish/{{chamado.id}}">
+            <form class="modal-add-input" method="POST" action="localhost/Ecologic/dashboard/finish/{{chamado.id}}">
 
                <p class="paragraph">Kilometragem do carro</p>
                <input type="number" name="km_entry" placeholder="Apenas números">
@@ -38,32 +38,32 @@
 
    <nav id="header">
       <div id="header-links">
-         <a href="ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/home">
-            <img id="logo" height="57" src="ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/assets/images/logo.svg" alt="Ecologic">
+         <a href="localhost/Ecologic/home">
+            <img id="logo" height="57" src="localhost/Ecologic/assets/images/logo.svg" alt="Ecologic">
          </a>
       </div>
       <div class='div-username'>
-         <p class='username'>{{usr.name_user}}, <a class="links" href="ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashboard/logout">Sair</a> </p>
+         <p class='username'>{{usr.name_user}}, <a class="links" href="localhost/Ecologic/dashboard/logout">Sair</a> </p>
       </div>
    </nav>
 
    <section id="calculator">
 
       <div id="calculator-options">
-         <button class="calculator-bar-item" onclick="location.href='ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashboard'">
+         <button class="calculator-bar-item" onclick="location.href='localhost/Ecologic/dashboard'">
             <div class="animation-bar-item">
                <h3>Chamada</h3>
             </div>
             <i class="fa-solid fa-angle-right"></i>
          </button>
-         <button class="calculator-bar-item" onclick="location.href='ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashVeiculo'">
+         <button class="calculator-bar-item" onclick="location.href='localhost/Ecologic/dashVeiculo'">
             <div class="animation-bar-item">
                <h3>Carros</h3>
             </div>
             <i class="fa-solid fa-angle-right"></i>
          </button>
 
-         <button class="calculator-bar-item" onclick="location.href='ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashFuncionario'">
+         <button class="calculator-bar-item" onclick="location.href='localhost/Ecologic/dashFuncionario'">
             <div class="animation-bar-item">
                <h3>Funcionário</h3>
             </div>
@@ -71,7 +71,7 @@
          </button>
 
          {% if usr.admin == 1 %}
-            <button class="calculator-bar-item" onclick="location.href='ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashAdmin'">
+            <button class="calculator-bar-item" onclick="location.href='localhost/Ecologic/dashAdmin'">
                <div class="animation-bar-item">
                   <h3>Admin</h3>
                </div>
@@ -82,7 +82,7 @@
 
       <div id="calculator-display">
          <div style='background:#fff; padding: 25px; border: 2px solid #000'>
-            <a href="ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashboard"><i class="fa-solid fa-angle-left"></i> Voltar</a>
+            <a href="localhost/Ecologic/dashboard"><i class="fa-solid fa-angle-left"></i> Voltar</a>
             <br>
             <p class='tag' {% if chamado.concluido == 0 %}
                   style='background-color: red'
@@ -120,7 +120,7 @@
             >
             Concluir
             </button>
-            <a style='margin-left: 15px'href="ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashboard/edit/{{chamado.id}}"><i class="fa-solid fa-pencil"></i> Editar</a>
+            <a style='margin-left: 15px'href="localhost/Ecologic/dashboard/edit/{{chamado.id}}"><i class="fa-solid fa-pencil"></i> Editar</a>
          </div>
       </div>
    </section>
