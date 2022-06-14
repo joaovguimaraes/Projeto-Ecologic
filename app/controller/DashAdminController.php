@@ -28,10 +28,10 @@
             foreach($_POST as &$id){
                $user->deleteUser($_POST[$id]);
             }
-            header('location: http://localhost:8080/Ecologic/dashAdmin');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com//dashAdmin');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: http://localhost:8080/Ecologic/dashAdmin');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com//dashAdmin');
          }
       }
 
@@ -103,10 +103,10 @@
 
             $user->updateUser($id[0]);
 
-            header('location: http://localhost:8080/Ecologic/dashAdmin');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com//dashAdmin');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: http://localhost:8080/Ecologic/dashAdmin/edit/'.$id[0]);
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com//dashAdmin/edit/'.$id[0]);
          }
       }    
 
@@ -114,7 +114,7 @@
          unset($_SESSION['usr']);
          session_destroy();
 
-         header('Location: http://localhost:8080/Ecologic/login/index');
+         header('Location: http://ec2-52-90-93-141.compute-1.amazonaws.com//login/index');
       }
 
       public function fetchData(){
