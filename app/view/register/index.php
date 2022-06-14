@@ -5,9 +5,9 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="assets/styles/register.css">
+   <link rel="stylesheet" href="/assets/styles/register.css">
    <title>EcoLogic</title>
-   <link rel="shortcut icon" href="assets/images/Simbol - Ecologic.svg" type="image/svg">
+   <link rel="shortcut icon" href="/assets/images/Simbol - Ecologic.svg" type="image/svg">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
       <div id="login-content">
          <form method="POST" action="http://ec2-52-90-93-141.compute-1.amazonaws.com/register/register" > 
 
-            <img src="assets/images/logo.svg" alt="logo" style="margin-bottom: 24px;">
+            <img src="/assets/images/logo.svg" alt="logo" style="margin-bottom: 24px;">
 
             <p class="paragraph">Nome</p>
             <input type="name" name="name" placeholder="Nome">

@@ -9,7 +9,7 @@
       private static $sgbd = "mysql";
       private static $host = "localhost";
       private static $user = "root";
-      private static $pass = "123";
+      private static $pass = "10041981aA@";
       private static $database = "ecologic";
       public static $port = 3306;
 
@@ -20,7 +20,4 @@
          return self::$conn;
       }
       
-      public static function getURL(){
-         return 'http://ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/login/';
-      }
    }
