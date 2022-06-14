@@ -5,8 +5,8 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/assets/styles/dashFuncionario.css">
-   <link rel="shortcut icon" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/assets/images/Simbol - Ecologic.svg" type="image/svg">
+   <link rel="stylesheet" href="http://localhost/Ecologic/assets/styles/dashFuncionario.css">
+   <link rel="shortcut icon" href="http://localhost/Ecologic/assets/images/Simbol - Ecologic.svg" type="image/svg">
    <script src="https://kit.fontawesome.com/e54de00844.js" crossorigin="anonymous"></script>
    <title>EcoLogic</title>
 </head>
@@ -22,7 +22,7 @@
                <h2>Adicionar</h2>
             </div>
 
-            <form class="modal-add-input" method="POST" action="http://ec2-52-90-93-141.compute-1.amazonaws.com/dashFuncionario/insert">
+            <form class="modal-add-input" method="POST" action="http://localhost/Ecologic/dashFuncionario/insert">
                <p class="paragraph">Nome</p>
                <input type="name" name="name" placeholder="Nome">
 
@@ -57,32 +57,32 @@
 
    <nav id="header">
       <div id="header-links">
-         <a href="http://ec2-52-90-93-141.compute-1.amazonaws.com/home">
-            <img id="logo" height="57" src="http://ec2-52-90-93-141.compute-1.amazonaws.com/assets/images/logo.svg" alt="Ecologic">
+         <a href="http://localhost/Ecologic/home">
+            <img id="logo" height="57" src="http://localhost/Ecologic/assets/images/logo.svg" alt="Ecologic">
          </a>
       </div>
       <div class='div-username'>
-         <p class='username'>{{usr.name_user}}, <a class="links" href="http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard/logout">Sair</a> </p>
+         <p class='username'>{{usr.name_user}}, <a class="links" href="http://localhost/Ecologic/dashboard/logout">Sair</a> </p>
       </div>
    </nav>
 
    <section id="calculator">
 
       <div id="calculator-options">
-         <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard'">
+         <button class="calculator-bar-item" onclick="location.href='http://localhost/Ecologic/dashboard'">
             <div class="animation-bar-item">
                <h3>Chamada</h3>
             </div>
             <i class="fa-solid fa-angle-right"></i>
          </button>
-         <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/dashVeiculo'">
+         <button class="calculator-bar-item" onclick="location.href='http://localhost/Ecologic/dashVeiculo'">
             <div class="animation-bar-item">
                <h3>Carros</h3>
             </div>
             <i class="fa-solid fa-angle-right"></i>
          </button>
 
-         <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/dashFuncionario'">
+         <button class="calculator-bar-item" onclick="location.href='http://localhost/Ecologic/dashFuncionario'">
             <div class="animation-bar-item">
                <h3>Funcionário</h3>
             </div>
@@ -90,7 +90,7 @@
          </button>
 
          {% if usr.admin == 1 %}
-            <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/dashAdmin'">
+            <button class="calculator-bar-item" onclick="location.href='http://localhost/Ecologic/dashAdmin'">
                <div class="animation-bar-item">
                   <h3>Admin</h3>
                </div>
@@ -111,7 +111,7 @@
             </div>
          </div>
 
-         <form id="form-display" method="POST" action="http://ec2-52-90-93-141.compute-1.amazonaws.com/dashFuncionario/delete" class="display-item-list">
+         <form id="form-display" method="POST" action="http://localhost/Ecologic/dashFuncionario/delete" class="display-item-list">
             {% for funcionario in funcionarios %}
                <input type="checkbox" name="{{funcionario.id}}" value="{{funcionario.id}}" id="{{funcionario.id}}" style="display: none;" />
                <label for="{{funcionario.id}}" class="label-display">
@@ -130,7 +130,7 @@
                                  Disponível
                               {% endif %}
                            </p>
-                           <a href="http://ec2-52-90-93-141.compute-1.amazonaws.com/dashFuncionario/edit/{{funcionario.id}}">Editar</a>
+                           <a href="http://localhost/Ecologic/dashFuncionario/edit/{{funcionario.id}}">Editar</a>
                         </div>
                      </div>
                      <div>
