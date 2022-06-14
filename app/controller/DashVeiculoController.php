@@ -28,10 +28,10 @@
             foreach($_POST as &$id){
                $veiculo->deleteVeiculo($_POST[$id]);
             }
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com//dashVeiculo');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashVeiculo');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com//dashVeiculo');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashVeiculo');
          }
       }
 
@@ -72,10 +72,10 @@
 
             $veiculo->insertVeiculo();
 
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com//dashVeiculo');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashVeiculo');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com//dashVeiculo');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashVeiculo');
          }
       }
 
@@ -138,10 +138,10 @@
 
             $veiculo->updateVeiculo($id[0]);
 
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com//dashVeiculo');
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashVeiculo');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com//dashVeiculo/edit/'.$id[0]);
+            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashVeiculo/edit/'.$id[0]);
          }
       }
 
@@ -149,7 +149,7 @@
          unset($_SESSION['usr']);
          session_destroy();
 
-         header('Location: http://ec2-52-90-93-141.compute-1.amazonaws.com//login/index');
+         header('Location: http://ec2-52-90-93-141.compute-1.amazonaws.com/login/index');
       }
 
       public function fetchData(){
