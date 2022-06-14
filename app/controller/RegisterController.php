@@ -45,10 +45,10 @@
 
             $user->validateRegister();
 
-            header('location: http://localhost/Ecologic/dashboard');
+            header('location: ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/dashboard');
          }catch(\Exception $e){
             $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: http://localhost/Ecologic/Register');
+            header('location: ec2-52-90-93-141.compute-1.amazonaws.com/Ecologic/Register');
          }
       }
    }
