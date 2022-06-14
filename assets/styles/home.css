@@ -237,9 +237,12 @@ li{
 .team-card{
     display: flex; 
     height: 75vh; 
-    width: 24vw; 
+    width: 28vw; 
     box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
     transition: all .2s ease-in-out;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-size: 24vw 75vh;
 }
 .team-card:hover { 
     transform: scale(1.03); 
@@ -443,6 +446,7 @@ input[type=text], select {
     width: 100vw;
     background-color: #FFF;
 }
+
 .error {
     position: absolute;
     display: flex;
@@ -485,3 +489,90 @@ input[type=text], select {
         padding: 0px;
     }
  }
+ #simbol-large{
+     height: 25vh;
+     height: 25vw;
+ }
+.cards-div{
+    display: flex; 
+    flex-direction: row; 
+    gap: 10vw
+}
+ @media only screen and (max-width: 1024px) {
+    .title{
+        font-size: 3.0rem;
+    }   
+    .dropdown{
+        width: 90vw; 
+    }
+    #carbon-page{
+        height: 130vh;
+    }
+    #carbon-content{
+        justify-content: start;
+    }
+    #carbon-page #image-fabric{
+        display: none;
+    }
+    #carbon-page .title{
+        font-size:1.5rem;
+    }    
+    #carbon-page .subtitle{
+        font-size:1.0rem;
+    }
+    #about-page{
+        height: 120vh;
+    }
+ }
+
+@media only screen and (max-width: 1024px){
+    #header-links ul{
+        display: none;
+    }
+    .title{
+        font-size: 2.0rem;
+    }   
+}
+@media only screen and (max-width: 425px){
+    #simbol-large{
+        display: none;
+    }
+    #content-home{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        align-items: center;
+        justify-content: center;
+    }
+    #carbon-home .title{
+        text-align: center;
+    }   
+    #content-home .paragraph{
+        text-align: center;
+    }
+    #about-page{
+        height: 150vh;
+    }
+    #contact-content{
+        width: 100vw;
+        flex: 1;
+        padding-inline: 5%;
+    }
+}
+@media only screen and (max-width: 768px){
+    #team-page{
+        display: none;
+    }   
+    #about-page #image-fabric{
+        display: none;
+    }
+    #carbon-div-text{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    #div-button-header{
+        display: none;
+    }   
+}
