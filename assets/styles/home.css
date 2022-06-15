@@ -544,6 +544,7 @@ input[type=text], select {
         align-items: center;
         justify-content: center;
         margin-right: 0%;
+        text-align: center;
     }
     #carbon-home .title{
         text-align: center;
