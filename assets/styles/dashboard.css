@@ -223,9 +223,8 @@ li {
 }
 
 .display-item-list {
-   height: 100%;
-
    margin: 3%;
+   height: 100%;
 
    border: #101B13 solid 2px;
    background-color: #FEFEFE;
@@ -259,7 +258,7 @@ li {
 
    height: 15vh;
    width: 100%;
-
+   user-select: none;
    -webkit-user-select: none;
 
    transition: 200ms ease-out;
@@ -467,7 +466,6 @@ li {
 
    font-size: 16px;
    font-family: 'Lato', sans-serif;
-
 }
 
 .modal-add-text p:nth-child(2) {
@@ -483,6 +481,56 @@ li {
    border: #000 2px solid;
    font-weight: bold;
    width: 100%;
+}
+
+#modal-calculate {
+   display: none;
+   position: absolute;
+   background-color: #0000004f;
+   height: 85vh;
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+}
+
+.modal-calculate-display {
+   width: 300px;
+   height: 250px;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+
+   box-sizing: border-box;
+
+   border: #000 2px solid;
+
+   padding: 15px;
+
+   background-color: #23AE4A;
+
+   font-size: 16px;
+   font-family: 'Lato', sans-serif;
+}
+
+.modal-calculate-text p:nth-child(2) {
+   color: #FFF;
+}
+
+.modal-calculate-display input {
+   width: 100%;
+   border: #000 2px solid;
+   font-weight: bold;
+}
+.modal-calculate-display select {
+   border: #000 2px solid;
+   font-weight: bold;
+   width: 100%;
+}
+
+.modal-calculate-button {
+   display: flex;
+   gap: 5px;
 }
 
 .div-username{
@@ -509,7 +557,7 @@ li {
    bottom: 15px;
    right: 15px;
    width: 200px;
-   height: 50px;
+   min-height: 50px;
    font-weight: bold;
    overflow: hidden;
    background-color: rgb(219, 0, 0);
@@ -541,4 +589,14 @@ li {
        border: 0px;
        padding: 0px;
    }
+}
+
+.no-data{
+   display: flex;
+   color:rgb(219, 0, 0);
+   align-self: center;
+   justify-self: center;
+   font-weight: 700;
+   align-self: center;
+   justify-self: center;
 }

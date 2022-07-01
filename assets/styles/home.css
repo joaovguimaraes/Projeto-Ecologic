@@ -456,7 +456,7 @@ input[type=text], select {
     bottom: 15px;
     right: 15px;
     width: 200px;
-    height: 50px;
+    min-height: 50px;
     font-weight: bold;
     overflow: hidden;
     background-color: rgb(219, 0, 0);

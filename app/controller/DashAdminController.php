@@ -24,14 +24,19 @@
 
       public function delete(){
          $user = new User;
-            try {
+         try {
             foreach($_POST as &$id){
                $user->deleteUser($_POST[$id]);
             }
             header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashAdmin');
          }catch(\Exception $e){
-            $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashAdmin');
+            if (str_contains($e->getMessage(), '23000')) { 
+               $_SESSION['msg_error'] = array('msg' => 'Atualmente em uso', 'count' => 0);
+               header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashAdmin');
+           }else{
+               $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
+               header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashAdmin');
+           }
          }
       }
 

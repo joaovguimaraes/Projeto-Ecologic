@@ -30,8 +30,13 @@
             }
             header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashVeiculo');
          }catch(\Exception $e){
-            $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashVeiculo');
+            if (str_contains($e->getMessage(), '23000')) { 
+               $_SESSION['msg_error'] = array('msg' => 'Atualmente em uso', 'count' => 0);
+               header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashVeiculo');
+            }else{
+               $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
+               header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashVeiculo');
+           }
          }
       }
 

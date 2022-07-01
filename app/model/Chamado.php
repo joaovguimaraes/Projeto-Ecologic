@@ -61,7 +61,27 @@
          $result = $stmt->fetchObject("Chamado");
 
          return $result;
-      }      
+      }   
+      
+      public function fetchRelatorio($date_start, $date_end){
+         $conn = Connection::getConn();
+
+         $sql = 'SELECT chamado.*,`nome`,`modelo`,`autonomia` FROM chamado INNER JOIN funcionario ON chamado.id_func = funcionario.id INNER JOIN veiculo ON chamado.id_veiculo = veiculo.id WHERE chamado.data > :date_start AND chamado.data < :date_end AND concluido = 1;';
+         $stmt = $conn->prepare($sql);
+         
+         $stmt->bindValue(':date_start', $date_start . '  00:00:00');
+         $stmt->bindValue(':date_end', $date_end . '  00:00:00');
+         
+         $stmt->execute();
+
+         $result =  array();
+
+         while($row = $stmt->fetchObject("Chamado")){
+            $result[] = $row;
+         }
+
+         return $result;
+      }
       
       public function updateChamado($id){
          $conn = Connection::getConn();

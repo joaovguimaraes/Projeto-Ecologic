@@ -74,13 +74,13 @@
       <div id="calculator-options">
          <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard'">
             <div class="animation-bar-item">
-               <h3>Chamada</h3>
+               <h3>Chamado</h3>
             </div>
             <i class="fa-solid fa-angle-right"></i>
          </button>
          <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/dashVeiculo'">
             <div class="animation-bar-item">
-               <h3>Carros</h3>
+               <h3>Veículo</h3>
             </div>
             <i class="fa-solid fa-angle-right"></i>
          </button>

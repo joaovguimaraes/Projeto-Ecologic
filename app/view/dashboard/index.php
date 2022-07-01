@@ -23,10 +23,10 @@
             </div>
 
             <form class="modal-add-input" method="POST" action="http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard/insert">
-               <p class="paragraph">Local</p>
+               <p class="paragraph">Endereço de destino</p>
                <input type="text" name="local" placeholder="Local">
 
-               <p class="paragraph">Kilometragem do carro</p>
+               <p class="paragraph">Quilometragem do carro</p>
                <input type="number" name="km_out" placeholder="Apenas números">
                
                <p class="paragraph">Funcionario</p>
@@ -65,6 +65,26 @@
       </div>
    </div>
 
+   <div id="modal-calculate">
+      <div class="modal-calculate-display">
+         <form class="modal-add-input" method="POST" action="http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard/calculate">
+            <div class="modal-calculate-text">
+               <h2>Calcular</h2>
+               <p>Selecione o pediodo desejado</p>
+               <p>Data de inicio</p>
+               <input type="date" name="date_start">
+               <p>Data de Final</p>
+               <input type="date" name="date_end">
+            </div>
+            <div class="modal-calculate-button" style='margin-top: 10px'>
+               <button id="button-remove-modal" class="button-display" type='button' onclick='modalCalculateClose()' >Cancelar</button>
+               <input id="button-confirm-modal" onclick='' class="button-display add" type="submit" value="Confirmar"/>
+            </div>
+         </form>
+      </div>
+      
+   </div>
+
    <nav id="header">
       <div id="header-links">
          <a href="http://ec2-52-90-93-141.compute-1.amazonaws.com/home">
@@ -81,13 +101,13 @@
       <div id="calculator-options">
          <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard'">
             <div class="animation-bar-item">
-               <h3>Chamada</h3>
+               <h3>Chamado</h3>
             </div>
             <i class="fa-solid fa-angle-right"></i>
          </button>
          <button class="calculator-bar-item" onclick="location.href='http://ec2-52-90-93-141.compute-1.amazonaws.com/dashVeiculo'">
             <div class="animation-bar-item">
-               <h3>Carros</h3>
+               <h3>Veículo</h3>
             </div>
             <i class="fa-solid fa-angle-right"></i>
          </button>
@@ -112,7 +132,7 @@
       <div id="calculator-display">
          <div id="display-buttons">
             <div class="buttons-display-div">
-               <button class="button-display"><strong>Calcular</strong></button>
+               <button class="button-display" onclick="modalCalculateOpen()"><strong>Calcular</strong></button>
                <button class="button-display add" onclick="modalAddOpen()"><strong>Adicionar +</strong></button>
             </div>
             <div class="buttons-display-div">
@@ -175,13 +195,18 @@
          form.submit();
       }
       
-
       var modalRemove = document.getElementById("modal-remove");
 
       var modalAdd = document.getElementById("modal-add");
 
+      var modalCalculate = document.getElementById("modal-calculate");
+
       function modalAddOpen() {
          modalAdd.style.display = "flex";
+      }
+
+      function modalCalculateOpen() {
+         modalCalculate.style.display = "flex";
       }
 
       function modalRemoveOpen() {
@@ -190,6 +215,10 @@
 
       function modalAddClose() {
          modalAdd.style.display = "none";
+      }
+
+      function modalCalculateClose() {
+         modalCalculate.style.display = "none";
       }
       
       function modalRemoveClose() {
@@ -202,6 +231,9 @@
          }
          if (event.target == modalRemove) {
             modalRemove.style.display = "none";
+         }
+         if (event.target == modalCalculate) {
+            modalCalculate.style.display = "none";
          }
       }
    </script>

@@ -73,6 +73,35 @@
          return $template->render($parameters);
       }
 
+      public function calculate(){
+         $chamado = new Chamado;
+         $func = new Funcionario;
+         $veiculo = new Veiculo;
+
+         $funcArray = $func->fetchAllFuncionario();
+         $date_start = $_POST['date_start'];
+         $date_end = $_POST['date_end'];
+
+         $chamadoObj = $chamado->fetchRelatorio($date_start, $date_end);
+         $veiculoArray = $veiculo->fetchAllVeiculo();
+
+
+         $loader = new \Twig\Loader\FilesystemLoader('app/view/reports');
+         $twig = new \Twig\Environment($loader,['auto_reload']);
+
+         $template = $twig->load('index.php');
+
+         $parameters['usr'] = $_SESSION['usr'];
+         $parameters['error'] = $_SESSION['msg_error'] ?? null;
+         
+         $parameters['function'] = $chamado;
+         $parameters['chamados'] = $chamadoObj;
+         $parameters['funcionarios'] = $funcArray;
+         $parameters['veiculos'] = $veiculoArray;
+
+         return $template->render($parameters);
+      }
+
       public function finish($id){
          try {
          $chamado = new Chamado;
@@ -104,10 +133,16 @@
             foreach($_POST as &$id){
                $chamado->deleteChamado($_POST[$id]);
             }
+
             header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard');
          }catch(\Exception $e){
-            $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
-            header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard');
+            if (str_contains($e->getMessage(), '23000')) { 
+               $_SESSION['msg_error'] = array('msg' => 'Atualmente em uso', 'count' => 0);
+               header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard');
+            }else{
+               $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
+               header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard');
+           }
          }
       }
 

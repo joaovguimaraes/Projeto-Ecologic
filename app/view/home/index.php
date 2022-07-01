@@ -91,7 +91,7 @@
                         </div>
                     </div>
                     <div class="team-card"
-                        style="background-image: linear-gradient(#00000000,#00000000, #000), url(http://localhost:8080/Ecologic/assets/images/image\ 1.jpeg);">
+                        style="background-image: linear-gradient(#00000000,#00000000, #000), url(/assets/images/image\ 1.jpeg);">
                         <div class="team-card-content">
                             <h1 class="subtitle">Mª Eduarda<br>Aguiar</h1>
                             <p class="paragraph">
