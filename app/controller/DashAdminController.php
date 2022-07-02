@@ -27,7 +27,10 @@
          try {
             foreach($_POST as &$id){
                $user->deleteUser($_POST[$id]);
-            }
+               if( $_SESSION['usr']['id_user']==$_POST[$id]){
+                  $this->logout();
+               }
+            }  
             header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashAdmin');
          }catch(\Exception $e){
             if (str_contains($e->getMessage(), '23000')) { 
@@ -72,8 +75,8 @@
                ? $_POST['old_pass']
                : $result->senha;
 
-            $pass = (isset($_POST['password']) and strlen($_POST['password'])  != 0) 
-               ? $_POST['password']
+            $pass = (isset($_POST['pass']) and strlen($_POST['pass'])  != 0) 
+               ? $_POST['pass']
                : $result->senha;
 
             $confirm_pass = (isset($_POST['confirm_pass']) and strlen($_POST['confirm_pass'])  != 0) 

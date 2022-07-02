@@ -78,13 +78,24 @@
          $func = new Funcionario;
          $veiculo = new Veiculo;
 
-         $funcArray = $func->fetchAllFuncionario();
          $date_start = $_POST['date_start'];
          $date_end = $_POST['date_end'];
 
-         $chamadoObj = $chamado->fetchRelatorio($date_start, $date_end);
+         $funcArray = $func->fetchAllFuncionario();
          $veiculoArray = $veiculo->fetchAllVeiculo();
+         $chamadoObj = $chamado->fetchRelatorio($date_start, $date_end);
 
+         $totalCo2 = 0;
+         $averageCo2 = 0;
+         $calcTotalKm = 0;
+         $calcAverageKm = 0;
+
+         if(count($chamadoObj)>1){
+            $totalCo2 = $chamado->calcTotalC02($chamadoObj);
+            $averageCo2 = $chamado->calcAverageC02($chamadoObj);
+            $calcTotalKm = $chamado->calcTotalKm($chamadoObj);
+            $calcAverageKm = $chamado->calcAverageKm($chamadoObj);
+         }
 
          $loader = new \Twig\Loader\FilesystemLoader('app/view/reports');
          $twig = new \Twig\Environment($loader,['auto_reload']);
@@ -96,8 +107,10 @@
          
          $parameters['function'] = $chamado;
          $parameters['chamados'] = $chamadoObj;
-         $parameters['funcionarios'] = $funcArray;
-         $parameters['veiculos'] = $veiculoArray;
+         $parameters['totalCo2'] = $totalCo2;
+         $parameters['averageCo2'] = $averageCo2;
+         $parameters['calcTotalKm'] = $calcTotalKm;
+         $parameters['calcAverageKm'] = $calcAverageKm;
 
          return $template->render($parameters);
       }
@@ -128,12 +141,10 @@
 
       public function delete(){
          $chamado = new Chamado;
-
          try{
             foreach($_POST as &$id){
                $chamado->deleteChamado($_POST[$id]);
             }
-
             header('location: http://ec2-52-90-93-141.compute-1.amazonaws.com/dashboard');
          }catch(\Exception $e){
             if (str_contains($e->getMessage(), '23000')) { 

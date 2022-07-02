@@ -15,36 +15,6 @@
    {% if error != ''%}
       <div class='error'>{{error.msg}}!</div>
    {% endif %}
-   <div id="modal-add">
-      
-      <div class="modal-add-display">
-         <div>
-            <div class="modal-add-text">
-               <h2>Adicionar</h2>
-            </div>
-            <form class="modal-add-input" method="POST" action="http://ec2-52-90-93-141.compute-1.amazonaws.com/dashAdmin/insert">
-               <p class="paragraph">Nome</p>
-               <input type="name" name="name" placeholder="Nome">
-
-               <p class="paragraph">E-mail</p>
-               <input type="email" name="email" placeholder="E-mail">
-               
-               <p class="paragraph">Senha</p>
-               <input type="number" name="cnh" placeholder="Apenas números">
-               
-               <p class="paragraph">Confirmar Senha</p>
-               <input type="number" name="cnh" placeholder="Apenas números">
-
-               <div class="modal-add-button" style='margin-top: 20px'>
-                  <button id="button-confirm-modal" class="button-display">Confirmar</button>
-                  <button id="button-remove-modal" type='button' onclick='modalAddClose()' class="button-display add">Cancelar</button>
-               </div>
-            </form>
-         </div>
-      </div>
-
-   </div>
-
    <div id="modal-remove">
       <div class="modal-remove-display">
          <div class="modal-remove-text">
@@ -105,7 +75,6 @@
       <div id="calculator-display">
          <div id="display-buttons">
             <div class="buttons-display-div">
-               <button class="button-display" onclick="modalAddOpen()"><strong>Adicionar</strong></button>
             </div>
             <div class="buttons-display-div">
                <button id="button-remove" onclick="modalRemoveOpen()" class="button-icon-display remove">

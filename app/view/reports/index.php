@@ -57,14 +57,14 @@
       </div>
       
       <div id="calculator-display">
-         <div style='display: flex; justify-content:space-between; margin-inline: 3%; margin-top: 3%'>
+         <div style='display: flex; justify-content:space-between; margin-inline: 3%; margin-top: 3%; padding-inline:5px; background: #fff; border: 2px solid #000'>
             <div >
-               <p><strong>Total de CO2 emitido:</strong></p>
-               <p><strong>Média de CO2 emitido:</strong></p>
+               <p><strong>Total de CO2 emitido:</strong> {{totalCo2|number_format(2)}} KG</p>
+               <p><strong>Média de CO2 emitido:</strong> {{averageCo2|number_format(2)}} KG</p>
             </div>
             <div >
-               <p><strong>Distância total percorrida:</strong></p>
-               <p><strong>Média de distância por chamado:</strong></p>
+               <p><strong>Distância total percorrida:</strong> {{calcTotalKm|number_format(2)}} KM</p>
+               <p><strong>Média de distância por chamado:</strong> {{calcAverageKm|number_format(2)}} KM</p>
             </div>
          </div>
          
@@ -78,7 +78,7 @@
                            <h3>#{{chamado.id}} </h3>
                            <h2>{{chamado.local}}</h2>
                            <div style='display: flex; gap:5px;'>
-                              <p>Co2: {{function.calcCo2(chamado.id)|number_format(2)}} Kg</p>
+                           <p>Co2: {{function.calcCo2(chamado.id)|number_format(2) }} Kg</p>
                            </div>
                         </div>
                         <div>

@@ -9,9 +9,6 @@
       private static $dsn = "mysql:host=ecologic.c00icrrae8dk.us-east-1.rds.amazonaws.com;port=3306;dbname=ecologic";
       private static $username = 'admin';
       private static $password = '12345678';
-      //private static $host = "localhost";
-      //private static $user = "root";
-      //private static $pass = "10041981aA@";
       private static $database = "ecologic";
       public static $port = 3306;
 

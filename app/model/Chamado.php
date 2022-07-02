@@ -140,7 +140,7 @@
          $stmt->bindValue(':id', $id);
         
          $stmt->execute();
-
+         
          return true;
       }
 
@@ -191,6 +191,34 @@
          $cg = ($distance*1) / $autonomy;
          $co2 = $cg * 0.73 * 0.75 * 3.7;
          return $co2;
+      }
+
+      public function calcTotalC02($chamados){
+         $totalCo2 = 0;
+         foreach ($chamados as &$chamado) {
+            $totalCo2 = $totalCo2 + $this->calcCo2($chamado->id);
+        }
+        return $totalCo2;
+      }
+
+      public function calcAverageC02($chamados){
+         $averageCo2 = 0;
+         $averageCo2 = $this->calcTotalC02($chamados)/count($chamados);
+         return $averageCo2;
+      }
+
+      public function calcTotalKm($chamados){
+         $totalKm = 0;
+         foreach ($chamados as &$chamado) {
+            $totalKm = $totalKm + ($chamado->km_entrada - $chamado->km_saida);
+        }
+        return $totalKm;
+      }
+
+      public function calcAverageKm($chamados){
+         $averageKm = 0;
+         $averageKm = $this->calcTotalKm($chamados)/count($chamados);
+         return $averageKm;
       }
 
       public function checkDisponivel($id, $table){
